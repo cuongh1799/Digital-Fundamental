@@ -79,8 +79,7 @@ switch x
                 pixel_green = a(row,col,2);
                 pixel_blue = a(row,col,3);
                 
-                % if (pixel_red >= 140) && (pixel_green >= 40) && (pixel_green < 120) && (pixel_blue < 56)
-                    if (pixel_red >= 100) && (pixel_green > 37) && (pixel_green <= 150)  && (pixel_blue <= 55)
+                    if (pixel_red >= 120) && (pixel_green > 37) && (pixel_green <= 150)  && (pixel_blue <= 55)
                     copy(row,col,1) = 0;
                     copy(row,col,2) = 0;
                     copy(row,col,3) = 0;
