@@ -36,11 +36,26 @@ xlabel("Distance travelled");
 ylabel("Height");
 title("45 degree projectile motion");
 
-%% Angle2 35
+angle2 = 35;
 
-syms y H v t a g
-y = H + v * t * sind(a) - 1/2 * g * power(t, 2);
-after = solve(y);
-disp(after)
+syms t
+eqn = initialHeight + initialVelo_ms * t * sind(angle2) - (1/2) * gravity * power(t, 2) == 0;
+total_time_2 = solve(eqn, t);
 
+a = (-1/2) * gravity;
+b = initialVelo_ms * sind(angle2);
+c = initialHeight - y_end;
+
+delta = power(b, 2) - 4 * a * c;
+if delta > 0
+    disp("2 real solution");
+    ans1 = (-b + sqrt(delta))/ 2 * a;
+    ans2 = (-b - sqrt(delta))/ 2 * a;
+    disp(ans1);
+    disp(ans2);
+elseif delta ==0
+    disp("one solution");
+elseif delta < 0
+    disp ("no real solution");
+end
 
